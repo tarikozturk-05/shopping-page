@@ -74,7 +74,7 @@ products.addEventListener("click", (e) => {
     calculateTotal();
     }
    
-  } else if (e.target.nextElementSibling.innerText <= 1) {
+  } else if (e.target.nextElementSibling.innerText <= 1 && confirm("İkazzz!")) {
     // remove(abc)
     e.target.parentElement.parentElement.parentElement.remove();
      calculateTotal();
