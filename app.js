@@ -25,6 +25,27 @@ let price = a.querySelector("strong").innerText;
 let sonuc = a.querySelector(".product-line-price");
 
 sonuc.innerText = (parİnner * price).toFixed(2)
+calculateTotal();
+}
+
+
+// ***************
+
+const calculateTotal = () => {
+let sonuc = document.querySelectorAll(".product-line-price");
+let subtotal = 0
+sonuc.forEach(x => {
+    subtotal += parseFloat(x.innerText);
+});
+
+
+document.querySelector("#card-subtotal p:nth-child(2)") = subtotal.toFixed(2);
+
+
+
+
+
+
 
 }
 
