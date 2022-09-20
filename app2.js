@@ -88,3 +88,4 @@ const calculateCartTotal = () => {
   document.querySelector("#cart-total").lastElementChild.innerText =
     cartTotal.toFixed(2);
 };
+
