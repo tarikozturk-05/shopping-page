@@ -77,6 +77,7 @@ products.addEventListener("click", (e) => {
   } else if (e.target.nextElementSibling.innerText <= 1) {
     // remove(abc)
     e.target.parentElement.parentElement.parentElement.remove();
+     calculateTotal();
   }
 });
 
