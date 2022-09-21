@@ -38,11 +38,11 @@ sonuc.forEach(x => {
     subtotal += parseFloat(x.innerText);
 });
 
-if(subtotal == 0){
-  if(confirm("Sepetiniz boş,Alıverişe devam edin")){
-     window.location.reload();
-  }
-}
+// if(subtotal == 0){
+//   if(confirm("Sepetiniz boş,Alıverişe devam edin")){
+//      window.location.reload();
+//   }
+// }
 
 let tax = taxRate * subtotal
 let shipping = subtotal ?  shippingPrice : 0;
@@ -78,15 +78,26 @@ products.addEventListener("click", (e) => {
     if(confirm("İkazİkazİkaz")){
     e.target.parentElement.parentElement.parentElement.remove();
     calculateTotal();
+     cart();
     }
    
   } else if (e.target.nextElementSibling.innerText <= 1 && confirm("İkazzz!")) {
     // remove(abc)
     e.target.parentElement.parentElement.parentElement.remove();
      calculateTotal();
+     cart();
   }
 });
+const cart = ()=>{
+if(!document.querySelector(".product")){
+  const cont = document.getElementById("product-painel")
 
+  cont.innerHTML = ` <div class="d-flex justfy-content-center 
+                            align-item-center "><h2>Your Cart İs Empty</h2> <br>
+            <a href="index.html"><button type="button" class=" mx-3 my-3 btn btn-warning">Alışverişe devam et!</button></a></div>
+`;
+}
+}
 
 
 
