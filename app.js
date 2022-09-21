@@ -38,13 +38,19 @@ sonuc.forEach(x => {
     subtotal += parseFloat(x.innerText);
 });
 
+if(subtotal == 0){
+  if(confirm("Sepetiniz boş,Alıverişe devam edin")){
+     window.location.reload();
+  }
+}
+
 let tax = taxRate * subtotal
 let shipping = subtotal ?  shippingPrice : 0;
 let total = tax + subtotal + shipping;
 
 
 // document.querySelector("#card-subtotal p:nth-child(2)") = subtotal.toFixed(2);
-document.querySelector("#p2").innerText =subtotal.toFixed(2)
+document.querySelector("#p2").innerText =subtotal.toFixed(2);
 
 document.querySelector("#p4").innerText = tax.toFixed(2);
 document.querySelector("#p6").innerText = shipping.toFixed(2);
